@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="hora_de_codar123.css">
+
+
+
+
+    <script>
+
+
+
+
+        function exercicioh1e01() {
+            var nome_do_carro = "fusca";
+            document.write(nome_do_carro);
+        }
+        /*     da nome a variavel fusca e coloca ela na tela 
+        */
+        function exercicioh1e02() {
+            //problema 02//
+
+            var nome01 = prompt("qual seu nome");
+            let conf = confirm("deseja digitae novamente seu nome ?")
+
+            if (conf) {
+
+                exercicioh1e02()
+            }
+            else {
+
+                window.close
+
+            }
+        }
+
+        //terceiro problema//
+
+
+
+        function exercicioh1e03() {
+            var idade01 = prompt("qual sua idadde");
+            var nae3 = prompt("qual seu nome ?");
+
+            alert("essa é sua idade" + idade01 + nae3);
+
+        }
+
+        function exercicioh1e04() {
+
+            var escolha = parseInt(prompt("vamos calcular a area de algumas figuras, escolha entre as opçãoes abaixo: \n retangulo 1 \n circulo  2 \n triangulo 3 \n losango  4 \n quadrado 5 \n trapezio  6"))
+
+
+            if (escolha === 1) {
+                retangulo()
+            }
+
+            if (escolha === 2) {
+
+                circulo()
+            }
+
+            if (escolha === 3) {
+
+                triangulo()
+
+            }
+
+            if (escolha === 4) {
+
+                losango()
+            }
+
+            if (escolha === 5) {
+
+                quadrado()
+
+            }
+
+            if (escolha === 6) {
+
+                trapezio()
+            }
+        }
+
+        function retangulo() {
+
+            var baser = parseFloat(prompt("qual a base do retangulo ?"));
+            var alturar = parseFloat(prompt("qual a altura do retangulo ?"));
+            var totalr = baser * alturar;
+            alert("a area do retangulo é:" + totalr)
+            let x = confirm("deseja continuar ?")
+
+            if (x) {
+                exercicioh1e04()
+            }
+
+            else {
+
+                window.close()
+            }
+        }
+
+        function circulo() {
+
+            var raio = parseFloat(prompt("qual o raio do circulo "))
+            var totalc = 3.14 * (raio ** 2);
+            alert("a area do seu circulo é:" + totalc)
+
+            let x = confirm("deseja continuar ?")
+            if (x) {
+
+                exercicioh1e04()
+            }
+            else {
+
+                Window.close()
+            }
+
+        }
+
+        function triangulo() {
+
+            var baset = parseFloat(prompt(" qual a base do seu triangulo ?"))
+            var altura = parseFloat(prompt("qual a altura do triangulo ?"))
+            var totalt = baset * altura / 2;
+
+            alert(" a area do seu triangulo é ?" + totalt)
+
+            let x = confirm("deseja continuar ?")
+            if (x) {
+
+                exercicioh1e04()
+
+            }
+            else {
+
+                window.close()
+            }
+        }
+        function losango() {
+
+            var diamaior = parseFloat(prompt(" qual o valor da diagonal maior?"))
+            var diamenor = parseFloat(prompt(" qual o valor da diagonal menor ?"))
+            var totall = diamenor * diamaior / 2;
+            alert("o valor total da area do seu losangolo é:" + totall)
+            let x = confirm("deseja continuar ?")
+
+            if (x) {
+
+                exercicioh1e04()
+            }
+
+            else {
+                window.close
+            }
+        }
+
+        function quadrado() {
+
+            var lado = parseFloat(prompt("qual o  valor do lado do quadrado ?"));
+            var totalq = lado * lado;
+            alert("a area do quadrado é:" + totalq)
+            let x = confirm("deseja continuar ?")
+
+            if (x) {
+
+                exercicioh1e04()
+
+            } else {
+
+                window.close()
+            }
+
+
+        }
+
+        function trapezio() {
+
+            var basemenor = parseFloat(prompt("qual o valor da base menor do seu trapezio"))
+            var basemaior = parseFloat(prompt(" qual o valor da base maior ?"))
+            var altura = parseFloat(prompt("qual a altura do seu trapezio ?"))
+            var totaltt = basemenor + basemaior * altura / 2;
+            alert("a area do seu trapezio é:" + totaltt)
+
+            let x = confirm("deseja continuar ?")
+
+            if (x) {
+
+                exercicioh1e04()
+
+            }
+            else {
+
+                window.close()
+            }
+
+        }
+
+
+        //finalizada atividade hora de codar 1//
+
+        function exercicioh2e02() {
+            var valor1 = parseFloat(prompt("digite um valor "))
+            var comparação = 0;
+
+            if (valor1 > comparação) {
+
+                alert(" é um valor positivo")
+            }
+
+            if (valor1 === comparação) {
+                alert(" o valor é igual a zero")
+            }
+
+            if (valor1 < comparação) {
+                alert("o valor é negativo")
+            }
+
+        }
+        function exercicioh2e03() {
+
+            let v1 = Number(prompt("digite o primeiro valor"))
+            let v2 = Number(prompt("digite o segundo valor "))
+            let v3 = Number(prompt("digite o terceiro valor "))
+
+
+            if (v1 > v2 && v1 > v3) {
+
+                document.write(`o maior valor é ${v1}`)
+            }
+
+            else if (v2 > v1 && v2 > v3) {
+
+                document.write(` o maior valor é ${v2}`)
+
+            }
+
+            else if (v1 === v2 && v1 === v3) {
+
+                document.write(`os valores são iguais por favor informe outro`)
+
+            }
+
+            else if (v2 === v1 && v2 < v3) {
+
+                document.write(" os dois primeiros valores são iguais por favor digite outro")
+
+            }
+            else if (v1 > v2 && v2 === v3) {
+
+                document.write("o os dois ultimos numeros sâo iguais, Por favor digite outro")
+
+            }
+            else {
+                document.write(`o maior valor é ${v3}`)
+
+            }
+        }
+
+
+        function exercicioh2e01() {
+            var nome = prompt(" Qual seu nome ?")
+            var n1 = parseInt(prompt(" digite o primeiro numero" + nome))
+            var n2 = parseInt(prompt(" digite o segundo numero" + nome))
+
+            if (n2 > n1) {
+                alert("o segundo é maior")
+            }
+            if (n1 > n2) {
+
+                alert("o primeiro é maior")
+            }
+            if (n1 === n2) {
+
+                alert("ambos são iguais ")
+            }
+
+            var x = confirm("deseja continuar ? " + nome)
+            if (x) {
+
+                exercicioh2e01()
+
+            } else {
+
+                window.close
+            }
+        }
+
+        //4. Faça um programa que leia 3 valores informados pelo usuário (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.//
+
+        function exercicioh2e04() {
+
+
+            let num01 = Number(prompt(" digite um numero "))
+            let num02 = Number(prompt(" digite um numero "))
+            let num03 = Number(prompt(" digite um numero "))
+            let numeromaior = null;
+            let segundomaior = null;
+
+
+            while (num01 == num02 || num01 == num03) {
+                num01 = Number(prompt(" digite outro numero"));
+            }
+            while (num02 == num03 || num02 === num01) {
+                num03 = Number(prompt(" digite outro numero "))
+            }
+
+
+            if (num02 > num01 && num03 > num01) {
+
+                numeromaior = num02;
+                segundomaior = num03;
+
+            }
+            else if (num03 > num01 && num01 > num02) {
+
+                numeromaior = num03;
+                segundomaior = num01;
+
+            }
+
+            else {
+
+                numeromaior = num01;
+                segundomaior = num02;
+
+            }
+            result = (numeromaior + segundomaior);
+            alert("o valor dos dois maiores é " + result);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <main Class="container">
+        <nav id="titulo_principal">
+            <h2> As atividades hora de codar estão abaixo clique nos botãoes para executar os exercicios </h2>
+        </nav>
+
+        <div id="buttonex">
+
+            <h4 id="titulo01"> Hora de codar 01</h4>
+            <button Class="exercicios" onclick="exercicioh1e01()"> Exercicio 01</button> <br>
+            <button Class="exercicios" onclick="exercicioh1e02()">Exercicio 02</button> <br>
+            <button Class="exercicios" onclick="exercicioh1e03()">Exercicio 03</button> <br>
+            <button Class="exercicios" onclick="exercicioh1e04()">Exercicio 04</button> <br>
+        </div>
+
+        <div id="buttonex02">
+            <h4 id="titulo02"> Hora de codar 02</h4>
+            <button Class="exercicios" onclick="exercicioh2e01()"> Exercicio 01</button> <br>
+            <button Class="exercicios" onclick="exercicioh2e02()"> Exercicio 02</button><br>
+            <button Class="exercicios" onclick="exercicioh2e03()"> Exercicio 03</button> <br>
+            <button Class="exercicios" onclick="exercicioh2e04()"> Exercicio 04</button><br>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
