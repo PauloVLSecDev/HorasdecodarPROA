@@ -273,11 +273,11 @@
             if (n2 > n1) {
                 alert("o segundo é maior")
             }
-            if (n1 > n2) {
+            else if (n1 > n2) {
 
                 alert("o primeiro é maior")
             }
-            if (n1 === n2) {
+            else if (n1 === n2) {
 
                 alert("ambos são iguais ")
             }
@@ -337,16 +337,286 @@
 
 
         }
+        function exercicioh2e05() {
+
+            let elementos = []
+            let total = 0;
+            for (let location = 1; location <= 6; locatin++) {
+
+                let numerosinformados = Number(prompt(`${locatin}º Digite um número`));
+                console.log(`mostrar os elementos ${numerosinformados}`)
+
+                total += numerosinformados;
+
+            }
+            total /= 6;
+
+            alert(`a media aritimetica  é ${total}`)
+        }
+
+
+
+        function exercicioh2e06()
+
+          /* Faça um programa que receba quatro valores informados pelo usuário, mas informe somente o primeiro, o último e o maior de todos eles (considere que todos os números informados serão diferentes)*/ {
+            let numeromaior = 0;
+            let valores = []
+            for (let quantidade = 1; quantidade <= 4; quantidade++) {
+
+                let valoresinformados = Number(prompt(`${quantidade} informa um valor`))
+                while (valores[quantidade - 2] == valoresinformados) {
+
+                    valoresinformados = Number(prompt(`digite outro numero `))
+                }
+                valores.push(valoresinformados)
+                if (valoresinformados > numeromaior) {
+                    numeromaior = valoresinformados
+                }
+
+
+
+            }
+            let ultimonumero = valores[valores.length - 1]
+            let primeironumero = valores[0]
+
+            alert(` o primeiro valor ${primeironumero} o maior valor é ${numeromaior} e o ultimo numero é ${ultimonumero} `)
+        }
+        /*Faça um programa que leia 6 números que o usuário vai informar. Todos os números lidos com valor inferior a 72 devem ser somados. Escreva o valor final da soma efetuada e também todos valores que o usuário informou.  
+                   */
+        function exercicioh2e07() {
+            let listadenumeros = []
+            let total = 0;
+
+            for (let posição = 1; posição <= 6; posição++) {
+                let retornados = Number(prompt("informe um numero"));
+                listadenumeros.push(retornados);
+                console.log(` array ${listadenumeros}`);
+
+                if (retornados < 72) {
+                    total += retornados;
+
+                }
+
+            } alert(`a soma de todos os valores menores que 72 é ${total} \n os valores informados pelo usuario ${listadenumeros}`);
+        }
+
+
+        /*Escreva um programa que calcule a média de quatro números informados pelo usuário, mas somente se esses números forem maiores que 0 e menores que 10. No final, se a média for maior que cinco o usuário receberá uma mensagem "Você passou no teste". Em qualquer outra situação, ele receberá uma mensagem de "tente novamente"
+       */
+
+        function exercicioh2e08() {
+            let total = 0;
+            let fourlist = []
+            for (let element = 1; element <= 4; element++) {
+                let value = parseFloat(prompt(`digite um numero`))
+                fourlist.push(value)
+                console.log(fourlist)
+
+                if (value >= 0 && value <= 10) {
+                    fourlist.push(value)
+                    total = + value
+                }
+                else if (value > 10 || value < 0) {
+                    element = 0;
+                    total = undefined;
+                    alert("os valores são menores que zero ou maiores que dez por favor coloque outro numero")
+                }
+
+            }
+            total / 4;
+
+
+            if (total <= 5) {
+
+                alert(`sua media é ${total} menor ou igual a 5 por favor tente novamente `)
+
+            }
+
+            else {
+                alert(`sua media é ${total} parabens voce passou no teste`)
+
+            }
+        }
+        /* 9. Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que ela nasceu).*/
+
+        function exercicioh2e09() {
+
+            let anoatual = Number(prompt("qual ano estamos"));
+            let anodenascimento = Number(prompt("qual o seu ano de nascimento ? "));
+            let verificador = anoatual - anodenascimento;
+
+            if (verificador >= 16) {
+
+                alert("voce pode votar")
+            }
+
+            else {
+
+                alert("voce não pode votar ")
+
+            }
+        }
+
+        /*10. Tendo como entrada a altura e o sexo (codificado da seguinte forma: 1: feminino 2: masculino) de uma pessoa, construa um programa que calcule e imprima seu peso ideal, utilizando as seguintes fórmulas:  */
+
+
+        function exercicioh2e10() {
+
+            let genero = Number(prompt("qual seu genero ? \n 1 homem \n 2 mulher \n( aqui nos referimos apenas ogenero biologico)"));
+            let altura = parseFloat(prompt("qual sua altura ? informe o numero em decimal "));
+            let homens = (72.7 * altura) - 58;
+            let mulheres = (62.1 * altura) - 44.7;
+
+
+            if (genero === 1) {
+
+
+                alert(`o peso ideal para voce é ${homens}`)
+                console.log(`a peso "ideal" do ${genero} é ${homens} `)
+            }
+
+            if (genero === 2) {
+
+                alert(`o peso ideal para voce é ${mulheres}`)
+                console.log(`o peso "ideal do ${genero} é ${mulheres}`)
+            }
+
+            if (isNaN(genero)) {
+                alert("isto não é um numero por favor digit um numero")
+                console.log("isso não é um numero ")
+            }
+            else {
+
+                console.log("isso é um numero ")
+
+            }
+        }
+
+        /*11. Uma micro calculadora
+Escreva um programa para ler 2 valores inteiros informados pelo usuário e uma das seguintes operações a serem executadas (codificada da seguinte forma: 1. Adição, 2. Subtração, 3. Divisão, 4. Multiplicação).
+O programa deve calcular e escrever o resultado dessa operação sobre os dois valores lidos. 
+
+Observação: Considere que só serão lidos os valores 1, 2, 3 ou 4 para as operações */
+
+        function exercicioh2e11() {
+
+            let operação = parseInt(prompt("deseja realizar quais operações \n 1 adição \n 2 subtração \n 3 divisão \n 4 multiplicação"))
+
+            if (operação === 1) {
+                adição()
+            }
+            if (operação === 2) {
+                subtração()
+            }
+            if (operação === 3) {
+                divisão()
+            }
+            if (operação === 4) {
+
+                multiplicação()
+            }
+            else if (isNaN(operação)) {
+                alert(" isso não é um numero")
+                exercicioh2e11()
+
+            }
+            else {
+
+                verification()
+
+            }
+        }
+        function adição() {
+
+            let total = 0;
+            let valor01 = parseInt(prompt("1 digite um valor entre 1 e 4"))
+            let valor02 = parseInt(prompt(" 2 digite um valor entre 1 e 4"))
+
+            valor01 > if ((0 && valor01 <= 4) && (valor02 > 0 && valor02 <= 4)) {
+                alert(`esse é o resultado da sua adição ${total}`)
+
+
+                total = valor01 + valor02;
+            }
+            else {
+                verification()
+            }
+        }
+
+        function subtração() {
+
+
+            let total = 0;
+            let valor01 = parseInt(prompt("1 digite um valor entre 1 e 4"))
+            let valor02 = parseInt(prompt(" 2 digite um valor entre 1 e 4"))
+
+            if ((valor01 > 0 && valor01 <= 4) && (valor02 > 0 && valor02 <= 4)) {
+
+                total = valor01 - valor02;
+                alert(`esse é o resultado da sua subtração ${total}`)
+            }
+            else {
+
+                verification()
+            }
+        }
+        function divisão() {
+
+            let total = 0;
+            let valor01 = parseInt(prompt("1 digite um valor entre 1 e 4"))
+            let valor02 = parseInt(prompt(" 2 digite um valor entre 1 e 4"))
+
+            if ((valor01 > 0 && valor01 <= 4) && (valor02 > 0 && valor02 <= 4)) {
+
+                total = valor01 / valor02;
+                alert(`aqui o resultado da sua divisão ${total}`)
+            }
+            else {
+
+                verification()
+            }
+        }
+
+
+        function multiplicação() {
+            let total = 0;
+            let valor01 = parseInt(prompt("1 digite um valor entre 1 e 4"))
+            let valor02 = parseInt(prompt(" 2 digite um valor entre 1 e 4"))
+
+            if ((valor01 > 0 && valor01 <= 4) && (valor02 > 0 && valor02 <= 4)) {
+
+                total = valor01 * valor02;
+                alert(`esse o resultado da sua multiplicaçâo ${total}`)
+            }
+            else {
+
+                verification()
+            }
+        }
+
+        function verification() {
+            let escolha = confirm("por favor digite um numero entre 1 e 4 ")
+            if (escolha) {
+
+                exercicioh2e11()
+            }
+            else {
+
+                window.close()
+            }
+        }
+
     </script>
 </head>
 
 <body>
-    <main Class="container">
-        <nav id="titulo_principal">
-            <h2> As atividades hora de codar estão abaixo clique nos botãoes para executar os exercicios </h2>
-        </nav>
 
-        <div id="buttonex">
+    <nav id="titulo_principal">
+        <h2> As atividades hora de codar estão abaixo clique nos botãoes para executar os exercicios </h2>
+    </nav>
+
+    <div Class="container">
+        <div CLass="Blocos" id="buttonex">
 
             <h4 id="titulo01"> Hora de codar 01</h4>
             <button Class="exercicios" onclick="exercicioh1e01()"> Exercicio 01</button> <br>
@@ -355,16 +625,25 @@
             <button Class="exercicios" onclick="exercicioh1e04()">Exercicio 04</button> <br>
         </div>
 
-        <div id="buttonex02">
+        <div Class="Blocos" id="buttonex02">
+
             <h4 id="titulo02"> Hora de codar 02</h4>
             <button Class="exercicios" onclick="exercicioh2e01()"> Exercicio 01</button> <br>
             <button Class="exercicios" onclick="exercicioh2e02()"> Exercicio 02</button><br>
             <button Class="exercicios" onclick="exercicioh2e03()"> Exercicio 03</button> <br>
             <button Class="exercicios" onclick="exercicioh2e04()"> Exercicio 04</button><br>
+            <button Class="exercicios" onclick="exercicioh2e05()"> Exercicio 05</button><br>
+            <button Class="exercicios" onclick="exercicioh2e06()"> Exercicio 06</button><br>
+            <button Class="exercicios" onclick="exercicioh2e07()"> Exercicio 07</button><br>
+            <button Class="exercicios" onclick="exercicioh2e08()"> Exercicio 08</button><br>
+            <button Class="exercicios" onclick="exercicioh2e09()"> Exercicio 09 </button><br>
+            <button Class="exercicios" onclick="exercicioh2e10()"> Exercicio 10</button><br>
+            <button Class="exercicios" onclick="exercicioh2e11()"> Exercicio 11</button><br>
+
 
         </div>
-    </main>
 
+    </div>
 </body>
 
 </html>
