@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> hora de codar 03 </title>
+
+    <link rel="stylesheet" href="hora_de_codar123.css">
+
+    <!--1 - Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor informado for igual ou menor que ZERO, deve ser lido um novo valor. Ou seja, para o segundo valor não pode ser aceito o valor zero, nem um valor negativo.  O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor.-->
+
+    <script>
+
+        function exercicioh3e01() {
+
+            let valor01informado = Number(prompt("digite um valor"))
+            let valor02informado = Number(prompt("digite um valor"))
+            let total = 0;
+
+            if (isNaN(valor01informado || valor02informado)) {
+
+                alert("isto não é um numero")
+                loop()
+            }
+
+            if (valor02informado <= 0) {
+
+                valor02informado = Number(prompt("digite um novo valor possitvo maior que zero"))
+
+            }
+
+            else {
+
+                total = valor01informado / valor02informado;
+                alert(`esto o resultado ${total}`)
+                loop()
+            }
+        }
+        function loop() {
+
+            let con = confirm("deseja continuar ?")
+
+            if (con) {
+
+                exercicioh3e01()
+            }
+
+            else {
+
+                window.close()
+            }
+        }
+
+        function exercicioh3e02() {
+
+
+
+            /* 2 - Crie uma bomba relógio (usando somente código - para deixar claro!) cuja contagem regressiva vá de 30 a 0. Utilize "document.write" para escrever em tela e no final da repetição escreva "EXPLOSÃO".*/
+
+            let segundo = 30;
+            for (segundo = 30; segundo >= 0; segundo--) {
+
+                let bomba = document.write(`<h4> faltam ${segundo} segundos <br> </h4>`)
+                if (segundo == 0) {
+                    let explodir = document.write(`EXPLODIR <br>`)
+                }
+
+            }
+
+        }
+
+        /*3 - Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente.
+      Exemplo: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1*/
+
+        function exercicioh3e03() {
+
+            let decresent = 10;
+
+            for (decresent = 10; decresent >= 1; decresent--) {
+
+                let numeros = document.write(`${decresent}<br>`);
+            }
+
+        }
+        /* 4 - Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).*/
+        function
+            exercicioh3e04() {
+
+            let total = 0;
+            let numeros = []
+
+            for (let possição = 15; possição <= 100; possição++) {
+                numeros.push(possição);
+                console.log(numeros.length)
+
+                total += possição;
+
+            }
+
+            console.log("mostrar valor da soma de todos os numeros" + total)
+
+            total /= numeros.length;
+            console.log(" mostras a media dos valores" + total)
+
+            alert(`${total}`)
+            alert(`a media aritimetica dos numeros entre 15 e 100 ${total}`)
+        }
+
+        /* Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro sempre será menor que o segundo.*/
+
+        function exercicioh3e05() {
+            let primeironumero = Number(prompt("digite um numero"))
+            let segundonumero = Number(prompt("digite outro numero "))
+            let listnumeros = []
+            let total = 0;
+            if (primeironumero < segundonumero) {
+                for (let inicio = primeironumero; primeironumero <= segundonumero; primeironumero++) {
+                    listnumeros.push(primeironumero);
+                    total += primeironumero;
+                }
+
+                console.log(` este é  o valor ${total}`)
+                console.log(`esse o valor total de elementos ${listnumeros.length}`)
+
+                total /= listnumeros.length
+
+                alert(`a media aritimetica entre os valores ${total}`)
+
+
+
+            }
+            else {
+
+                alert("numero invalido");
+
+            }
+        }
+
+        /* 6 - Escreva um programa para ler 2 notas de um aluno, calcular e imprimir a média final. Considere que a nota de aprovação é 9,5. Logo após escrever a mensagem "Calcular a média de outro aluno Sim/Não?" e solicitar um resposta. Se a resposta for "S", o programa deve ser executado novamente, caso contrário deve ser encerrado exibindo a quantidade de alunos aprovados */
+
+        function exercicioh3e06() {
+            let alunosaprovados = ["joao", "matheus", "jeferson"]
+            let aluno = prompt("qual seu nome")
+            let nota01 = Number(prompt("digite sua nota na primeira prova"));
+            let nota02 = Number(prompt("digite sua nota na segunda prova"));
+            let mediafinal = (nota01 + nota02) / 2
+
+            console.log(`nome do aluno ${aluno}`)
+            console.log(` nome dos alunos aprovados ${alunosaprovados}`)
+            console.log(`valor da media final é ${mediafinal}`)
+            if (mediafinal >= 9.5) {
+
+                alunosaprovados.push(aluno)
+                console.log(` nome dos alunos aprovados ${alunosaprovados}`)
+                alert(`parabens ${aluno} sua media foi ${mediafinal}`)
+                let novamente = prompt("calcular a media de outro aluno Sim/Não por favor responder com S caso sim")
+
+                if (novamente === "S") {
+
+                    exercicioh3e06()
+                }
+                else {
+
+                    alert(`esta é a quantidade de alunos que passam  ${alunosaprovados.length}`)
+                }
+            }
+
+            else {
+                alert(`${aluno} foi REPROVADO o numero total de aprovados é ${alunosaprovados.length}`)
+
+                exercicioh3e06()
+            }
+
+        }
+
+        /*7 - Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota. São 6 notas ao total.
+Caso o valor informado para qualquer uma das notas esteja fora do limite estabelecido, deve ser solicitado um novo valor ao usuário.  */
+        function exercicioh3e07() {
+            let notas = []
+            let mediaS = 0;
+            let valor = 1
+            while (valor <= 6) {
+                valor++
+
+                console.log(`numero da prova ${valor - 1}`)
+                let valores = Number(prompt(`qual foi sua nota na prova ${valor - 1}`))
+                console.log(`Nota da prova ${valores}`)
+                if (valores < 0 || valores > 10) {
+                    valor += -1;
+                    alert("o valor informado invalido so aceitamos valores entre 1 e 10")
+
+                }
+                else {
+                    notas.push(valores)
+                    console.log(`essas são as notas usadas para calcular a media ${notas}`)
+                    mediaS += valores;
+
+                }
+            }
+            mediaS /= notas.length
+            console.log(`essa a media do aluno ${mediaS}`)
+            alert(`sua media é ${mediaS}`)
+        }
+
+        /* 8 - Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N será sempre maior que ZERO.
+    N  é um valor informado pelo usuário*/
+
+        function exercicioh3e08() {
+            let n = Number(prompt("digite um numero"))
+            let arraydenumeros = []
+            let principil = 1;
+
+            if (n > 0) {
+                while (principil < n - 1) {
+                    principil++
+
+                    arraydenumeros.push(principil)
+
+                }
+
+            }
+
+            else {
+                alert(`valor ${n} invalido por favor infor um valor maior que zero`)
+                exercicioh3e08()
+
+            }
+
+            alert(`esse são todos os numeros entre 1 e ${n} são ${arraydenumeros}`)
+
+
+
+        }
+
+        /*9 - Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100. */
+        function exercicioh3e09() {
+
+            let inteiros = []
+            possicao = 100;
+
+            for (possicao += 1; possicao <= 110; possicao++) {
+
+                inteiros.push(possicao)
+
+            }
+
+            alert(`os 10 primeiros valores maiores que 100 são ${inteiros}`)
+        }
+
+        /*- Escreva um programa para imprimir todas as tabuadas de 1 a N. N será informado pelo usuário.*/
+        function exercicioh3e10() {
+            let tabuada = []
+            let numero = Number(prompt(`digite um numero para calcular a tabuada`))
+            for (let produto01 = 1; produto01 <= 10; produto01++) {
+
+                tabuada.push(produto01 * numero)
+                console.log(tabuada)
+
+            }
+            alert(`a tabuada do 1 ao ${numero} ${tabuada}`)
+        }
+        /*1 - Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão fora deste intervalo.*/
+        function exercicioh3e11() {
+
+            let arraytrue = []
+            let arrayfalse = []
+            let n = 0;
+
+            while (n <= 10) {
+                n++
+                let top10 = Number(prompt(`digite um numero ${n}`))
+
+                if (top10 >= 24 && top10 <= 42) {
+                    arraytrue.push(top10)
+                    console.log(`${top10}`)
+                    console.log(arraytrue)
+                }
+                else {
+                    arrayfalse.push(top10)
+                    console.log(`valores menores que 24 ou maiores que 42 ${arrayfalse}`)
+
+                }
+               
+            }
+            alert(`voce digitou ${arraytrue.length} valores entre 24 e 42 e ${arrayfalse.length} valores manores que 24 ou maioeres que 42`)
+
+        }
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h4 id="titulo02"> Hora de codar 03</h4>
+    <button Class="exercicios" onclick="exercicioh3e01()"> Exercicio 01</button> <br>
+    <button Class="exercicios" onclick="exercicioh3e02()"> Exercicio 02</button><br>
+    <button Class="exercicios" onclick="exercicioh3e03()"> Exercicio 03</button> <br>
+    <button Class="exercicios" onclick="exercicioh3e04()"> Exercicio 04</button><br>
+    <button Class="exercicios" onclick="exercicioh3e05()"> Exercicio 05</button><br>
+    <button Class="exercicios" onclick="exercicioh3e06()"> Exercicio 06</button><br>
+    <button Class="exercicios" onclick="exercicioh3e07()"> Exercicio 07</button><br>
+    <button Class="exercicios" onclick="exercicioh3e08()"> Exercicio 08</button><br>
+    <button Class="exercicios" onclick="exercicioh3e09()"> Exercicio 09 </button><br>
+    <button Class="exercicios" onclick="exercicioh3e10()"> Exercicio 10</button><br>
+    <button Class="exercicios" onclick="exercicioh3e11()"> Exercicio 11</button><br>
+
+
+    </div>
+</body>
+
+</html>
